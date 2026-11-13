@@ -1,0 +1,61 @@
+// Phosphor icons, imported one by one from the context-free SSR build so the
+// bundle only contains what the site uses. Use weight="duotone" for feature
+// icons and weight="bold"/"fill" for small UI glyphs.
+
+export { ArrowLeft } from "@phosphor-icons/react/dist/ssr/ArrowLeft";
+export { ArrowRight } from "@phosphor-icons/react/dist/ssr/ArrowRight";
+export { ArrowUp } from "@phosphor-icons/react/dist/ssr/ArrowUp";
+export { ArrowUpRight } from "@phosphor-icons/react/dist/ssr/ArrowUpRight";
+export { BookOpenText } from "@phosphor-icons/react/dist/ssr/BookOpenText";
+export { CalendarBlank } from "@phosphor-icons/react/dist/ssr/CalendarBlank";
+export { Cards } from "@phosphor-icons/react/dist/ssr/Cards";
+export { CaretDown } from "@phosphor-icons/react/dist/ssr/CaretDown";
+export { CaretLeft } from "@phosphor-icons/react/dist/ssr/CaretLeft";
+export { CaretRight } from "@phosphor-icons/react/dist/ssr/CaretRight";
+export { ChalkboardTeacher } from "@phosphor-icons/react/dist/ssr/ChalkboardTeacher";
+export { ChatCircleDots } from "@phosphor-icons/react/dist/ssr/ChatCircleDots";
+export { Check } from "@phosphor-icons/react/dist/ssr/Check";
+export { Clock } from "@phosphor-icons/react/dist/ssr/Clock";
+export { Cookie } from "@phosphor-icons/react/dist/ssr/Cookie";
+export { DownloadSimple } from "@phosphor-icons/react/dist/ssr/DownloadSimple";
+export { EnvelopeSimple } from "@phosphor-icons/react/dist/ssr/EnvelopeSimple";
+export { FileText } from "@phosphor-icons/react/dist/ssr/FileText";
+export { GearSix } from "@phosphor-icons/react/dist/ssr/GearSix";
+export { Globe } from "@phosphor-icons/react/dist/ssr/Globe";
+export { GooglePlayLogo } from "@phosphor-icons/react/dist/ssr/GooglePlayLogo";
+export { HandPalm } from "@phosphor-icons/react/dist/ssr/HandPalm";
+export { HandPointing } from "@phosphor-icons/react/dist/ssr/HandPointing";
+export { House } from "@phosphor-icons/react/dist/ssr/House";
+export { Leaf } from "@phosphor-icons/react/dist/ssr/Leaf";
+export { Lifebuoy } from "@phosphor-icons/react/dist/ssr/Lifebuoy";
+export { Lightbulb } from "@phosphor-icons/react/dist/ssr/Lightbulb";
+export { List } from "@phosphor-icons/react/dist/ssr/List";
+export { ListNumbers } from "@phosphor-icons/react/dist/ssr/ListNumbers";
+export { LockSimple } from "@phosphor-icons/react/dist/ssr/LockSimple";
+export { MagnifyingGlass } from "@phosphor-icons/react/dist/ssr/MagnifyingGlass";
+export { MapPin } from "@phosphor-icons/react/dist/ssr/MapPin";
+export { Minus } from "@phosphor-icons/react/dist/ssr/Minus";
+export { MusicNotes } from "@phosphor-icons/react/dist/ssr/MusicNotes";
+export { PaperPlaneTilt } from "@phosphor-icons/react/dist/ssr/PaperPlaneTilt";
+export { PencilSimpleLine } from "@phosphor-icons/react/dist/ssr/PencilSimpleLine";
+export { Phone } from "@phosphor-icons/react/dist/ssr/Phone";
+export { Play } from "@phosphor-icons/react/dist/ssr/Play";
+export { Plus } from "@phosphor-icons/react/dist/ssr/Plus";
+export { ProhibitInset } from "@phosphor-icons/react/dist/ssr/ProhibitInset";
+export { PuzzlePiece } from "@phosphor-icons/react/dist/ssr/PuzzlePiece";
+export { Question } from "@phosphor-icons/react/dist/ssr/Question";
+export { RocketLaunch } from "@phosphor-icons/react/dist/ssr/RocketLaunch";
+export { Scales } from "@phosphor-icons/react/dist/ssr/Scales";
+export { SealCheck } from "@phosphor-icons/react/dist/ssr/SealCheck";
+export { ShieldCheck } from "@phosphor-icons/react/dist/ssr/ShieldCheck";
+export { ShoppingCart } from "@phosphor-icons/react/dist/ssr/ShoppingCart";
+export { SlidersHorizontal } from "@phosphor-icons/react/dist/ssr/SlidersHorizontal";
+export { Sparkle } from "@phosphor-icons/react/dist/ssr/Sparkle";
+export { SpeakerHigh } from "@phosphor-icons/react/dist/ssr/SpeakerHigh";
+export { Star } from "@phosphor-icons/react/dist/ssr/Star";
+export { UsersThree } from "@phosphor-icons/react/dist/ssr/UsersThree";
+export { Wrench } from "@phosphor-icons/react/dist/ssr/Wrench";
+export { X } from "@phosphor-icons/react/dist/ssr/X";
+export { YoutubeLogo } from "@phosphor-icons/react/dist/ssr/YoutubeLogo";
+
+export type { Icon, IconProps } from "@phosphor-icons/react/dist/lib/types";

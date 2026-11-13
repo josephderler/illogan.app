@@ -1,0 +1,389 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------------------
+   Theme: "Powder Blue" by serafimcloud from 21st.dev
+   https://21st.dev/community/themes/powder-blue
+   Base tokens are kept as published (popover-foreground was #ffffff in the
+   source, which is unreadable on a white popover, so it uses the foreground
+   colour here). The block below adds the app's own playful palette, taken from
+   the game artwork, plus an AA-contrast variant of the primary blue for text
+   and buttons.
+   ------------------------------------------------------------------------- */
+:root {
+  --background: #ffffff;
+  --foreground: #1c3a41;
+  --card: #ffffff;
+  --card-foreground: #1c3a41;
+  --popover: #ffffff;
+  --popover-foreground: #1c3a41;
+  --primary: #66abff;
+  --primary-foreground: #ffffff;
+  --secondary: #ffffff;
+  --secondary-foreground: #000000;
+  --muted: #f2f0f0;
+  --muted-foreground: #404f54;
+  --accent: #f8f6fc;
+  --accent-foreground: #375258;
+  --destructive: #ff4395;
+  --destructive-foreground: #ffffff;
+  --border: #f0f9ff;
+  --input: #f0ad60;
+  --ring: #002757;
+  --chart-1: #66abff;
+  --chart-2: #4487f6;
+  --chart-3: #3470db;
+  --chart-4: #265db7;
+  --chart-5: #285190;
+  --radius: 1.25rem;
+  --shadow-color: #f53100;
+  --shadow-opacity: 0.06;
+  --shadow-blur: 50px;
+  --shadow-spread: -1px;
+  --shadow-offset-x: 1.5px;
+  --shadow-offset-y: 5.5px;
+  --letter-spacing: -0.025em;
+  --spacing: 0.25rem;
+
+  /* Extensions for this site */
+  --primary-strong: #1f6fd6; /* white text on this passes WCAG AA (4.9:1) */
+  --primary-deep: #13407e;
+  --sky-50: #f0f9ff;
+  --sky-100: #e0f0ff;
+  --hairline: #dcebfb;
+  --sun: #ffc83d;
+  --sun-deep: #f5a300;
+  --coral: #ff6b57;
+  --berry: #ff4395;
+  --leaf: #2fbf4f;
+  --mint: #4fd1c5;
+  --grape: #9b6bdf;
+  --cream: #fff8e8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-primary-strong: var(--primary-strong);
+  --color-primary-deep: var(--primary-deep);
+  --color-sky-50: var(--sky-50);
+  --color-sky-100: var(--sky-100);
+  --color-hairline: var(--hairline);
+  --color-sun: var(--sun);
+  --color-sun-deep: var(--sun-deep);
+  --color-coral: var(--coral);
+  --color-berry: var(--berry);
+  --color-leaf: var(--leaf);
+  --color-mint: var(--mint);
+  --color-grape: var(--grape);
+  --color-cream: var(--cream);
+
+  --font-sans: "DM Sans Variable", "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fredoka Variable", "Fredoka", ui-rounded, "DM Sans Variable", ui-sans-serif, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 0.75rem);
+  --radius-md: calc(var(--radius) - 0.5rem);
+  --radius-lg: calc(var(--radius) - 0.25rem);
+  --radius-xl: var(--radius);
+  --radius-2xl: calc(var(--radius) + 0.25rem);
+  --radius-3xl: calc(var(--radius) + 0.75rem);
+
+  /* Theme shadow (warm, very soft) plus a crisp contact shadow for depth */
+  --shadow-soft: var(--shadow-offset-x) var(--shadow-offset-y) var(--shadow-blur) var(--shadow-spread)
+    color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent);
+  --shadow-card: 0 1px 2px rgb(28 58 65 / 0.06), 0 8px 24px -12px rgb(28 58 65 / 0.16),
+    var(--shadow-offset-x) var(--shadow-offset-y) var(--shadow-blur) var(--shadow-spread)
+      color-mix(in srgb, var(--shadow-color) calc(var(--shadow-opacity) * 100%), transparent);
+  --shadow-lift: 0 2px 4px rgb(28 58 65 / 0.06), 0 24px 48px -20px rgb(19 64 126 / 0.35);
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float 9s ease-in-out infinite;
+  --animate-pulse-ring: pulse-ring 2.4s cubic-bezier(0.2, 0.7, 0.4, 1) infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(var(--tilt, 0deg));
+    }
+    50% {
+      transform: translateY(-12px) rotate(var(--tilt, 0deg));
+    }
+  }
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(0.9);
+      opacity: 0.55;
+    }
+    100% {
+      transform: scale(1.6);
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5.5rem;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    letter-spacing: var(--letter-spacing);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--primary) 35%, transparent);
+  }
+  :focus-visible {
+    outline: 3px solid var(--primary-strong);
+    outline-offset: 3px;
+    border-radius: 0.5rem;
+  }
+}
+
+@layer components {
+  .container-page {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 76rem;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .container-page {
+      padding-inline: 2rem;
+    }
+  }
+
+  /* Soft dotted backdrop used behind several sections */
+  .bg-dots {
+    background-image: radial-gradient(
+      color-mix(in srgb, var(--primary) 22%, transparent) 1.2px,
+      transparent 1.2px
+    );
+    background-size: 22px 22px;
+  }
+
+  /* Long-form legal text */
+  .prose-legal {
+    color: var(--muted-foreground);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+  .prose-legal p + p,
+  .prose-legal p + ul,
+  .prose-legal ul + p {
+    margin-top: 0.9rem;
+  }
+  .prose-legal ul {
+    display: grid;
+    gap: 0.5rem;
+    padding-left: 0;
+    list-style: none;
+  }
+  .prose-legal li {
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  .prose-legal li::before {
+    content: "";
+    position: absolute;
+    left: 0.25rem;
+    top: 0.72em;
+    height: 0.45rem;
+    width: 0.45rem;
+    border-radius: 9999px;
+    background: var(--primary);
+  }
+  .prose-legal a {
+    color: var(--primary-strong);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+  }
+  .prose-legal strong {
+    color: var(--foreground);
+    font-weight: 700;
+  }
+
+  /* Inline links inside regular copy (FAQ answers, notes) */
+  .link-inline a {
+    color: var(--primary-strong);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+  }
+  .link-inline a:hover {
+    color: var(--primary-deep);
+  }
+  .link-inline strong {
+    color: var(--foreground);
+    font-weight: 700;
+  }
+
+  /* Gradient headline accent */
+  .text-gradient {
+    background: linear-gradient(100deg, var(--primary-strong) 0%, #7a5cf0 45%, var(--berry) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* ---------------------------------------------------------------- reveal */
+[data-reveal] {
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-reveal="hidden"] {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: none;
+}
+
+/* -------------------------------------------- icon hover micro-interactions */
+@keyframes icon-wiggle {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-12deg); }
+  50% { transform: rotate(10deg); }
+  75% { transform: rotate(-6deg); }
+}
+@keyframes icon-bounce {
+  0%, 100% { transform: translateY(0); }
+  35% { transform: translateY(-7px); }
+  65% { transform: translateY(1px); }
+}
+@keyframes icon-pop {
+  0%, 100% { transform: scale(1); }
+  40% { transform: scale(1.22); }
+  70% { transform: scale(0.95); }
+}
+@keyframes icon-tilt {
+  0%, 100% { transform: rotate(0) scale(1); }
+  50% { transform: rotate(-14deg) scale(1.08); }
+}
+@keyframes icon-beat {
+  0%, 100% { transform: scale(1); }
+  20% { transform: scale(1.18); }
+  40% { transform: scale(1); }
+  60% { transform: scale(1.12); }
+}
+@keyframes icon-swing {
+  0%, 100% { transform: translateX(0); }
+  30% { transform: translateX(-4px) rotate(-6deg); }
+  60% { transform: translateX(4px) rotate(6deg); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .group:hover .icon-anim-wiggle,
+  .group:focus-visible .icon-anim-wiggle { animation: icon-wiggle 0.7s ease-in-out; }
+  .group:hover .icon-anim-bounce,
+  .group:focus-visible .icon-anim-bounce { animation: icon-bounce 0.7s ease-in-out; }
+  .group:hover .icon-anim-pop,
+  .group:focus-visible .icon-anim-pop { animation: icon-pop 0.6s ease-in-out; }
+  .group:hover .icon-anim-tilt,
+  .group:focus-visible .icon-anim-tilt { animation: icon-tilt 0.7s ease-in-out; }
+  .group:hover .icon-anim-beat,
+  .group:focus-visible .icon-anim-beat { animation: icon-beat 0.9s ease-in-out; }
+  .group:hover .icon-anim-swing,
+  .group:focus-visible .icon-anim-swing { animation: icon-swing 0.7s ease-in-out; }
+}
+
+/* ------------------------------------------- hero screenshot crossfade */
+@keyframes xfade-b {
+  0%, 30% { opacity: 0; }
+  33.3%, 66.6% { opacity: 1; }
+  70%, 100% { opacity: 0; }
+}
+@keyframes xfade-c {
+  0%, 63.3% { opacity: 0; }
+  66.6%, 96.6% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.xfade-layer {
+  opacity: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .xfade-b { animation: xfade-b 13.5s linear infinite; }
+  .xfade-c { animation: xfade-c 13.5s linear infinite; }
+  .group:hover .xfade-layer { animation-play-state: paused; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe-float {
+    animation: none !important;
+  }
+}
+
+/* ------------------------------------------------------------ accordion */
+summary {
+  list-style: none;
+  cursor: pointer;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+@supports (interpolate-size: allow-keywords) {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+  details.acc::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition:
+      block-size 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      content-visibility 0.35s allow-discrete;
+  }
+  details.acc[open]::details-content {
+    block-size: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  details.acc::details-content {
+    transition: none;
+  }
+}
